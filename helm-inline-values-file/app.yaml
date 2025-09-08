@@ -14,12 +14,12 @@ spec:
   project: default
   sources:
     
-    repoURL: https://github.com/my-repo/my-argo-app
-    path: "Chart"
-    targetRevision: main
-    helm:
-      valueFiles:
-        - values.yaml
+    - repoURL: https://github.com/my-repo/my-argo-app
+      path: "Chart"
+      targetRevision: main
+      helm:
+        valueFiles:
+          - values.yaml
 
 destination:
   server: https://kubernetes.default.svc

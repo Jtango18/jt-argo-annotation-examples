@@ -18,13 +18,13 @@ spec:
   project: default
   sources:
     
-    repoURL: https://github.com/my-repo/my-argo-app
-    path: "./"
-    targetRevision: main
-    helm:
-      valueFiles:
-        - app-files/values.yaml
-        - app-files/values-overlay.yaml
+    - repoURL: https://github.com/my-repo/my-argo-app
+      path: "./"
+      targetRevision: main
+      helm:
+        valueFiles:
+          - app-files/values.yaml
+          - app-files/values-overlay.yaml
 
 destination:
   server: https://kubernetes.default.svc
