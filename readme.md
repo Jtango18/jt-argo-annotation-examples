@@ -16,3 +16,4 @@ This syntax is similar to how we currently apply image replacement path annotati
  - [Helm Inline Values Files](./helm-inline-values-files/app.yaml) - A Helm source with multiple inline values files specified.
  - [Helm Mixed Source Values Files](./helm-mixed-source-values-files/app.yaml) - A Helm sources with a mix of inline and ref based Values files. Also with an [Alternate approach](./helm-mixed-source-values-files/app-alternate.yaml)
  - [Single Ref Path Separated Values Files](./single-ref-path-separated-values/app.yaml) - A single ref is provided that contains multiple values files along different paths.
+ - [Multiple helm Applications](./multiple-helm-applications/app.yaml) - Multiple Helm applications that use Value files in their own repos
