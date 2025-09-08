@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     argo.octopus.com/project: "proj-1"
-    argo.octopus.environment: "development"
+    argo.octopus/environment: "development"
 
     # When values files are in the same Ref but separated by path, we use the alias to signify which file we want to apply annotations to.
     # We can calulate the absolute path using current methods for extracting files from Ref sources.

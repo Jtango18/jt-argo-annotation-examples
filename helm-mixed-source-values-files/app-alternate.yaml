@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     argo.octopus.com/project: "proj-1"
-    argo.octopus.environment: "development"
+    argo.octopus/environment: "development"
 
     # We can continue to honour the existing approach with ref values if required - but would need to let users understand the limitations
     # In this approach, since a ref exists, we don't need to explicitly create an alias for it

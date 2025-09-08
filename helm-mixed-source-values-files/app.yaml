@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     argo.octopus.com/project: "proj-1"
-    argo.octopus.environment: "development"
+    argo.octopus/environment: "development"
 
     # For consistency, best way to handle this is the same way as inline files where an alias is created for a path.
     # An alternative approach is presented in ./app-alternate.yaml which would ultimately also work.

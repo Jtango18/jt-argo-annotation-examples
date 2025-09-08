@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     argo.octopus.com/project: "proj-1"
-    argo.octopus.environment: "development"
+    argo.octopus/environment: "development"
 
     # When there are multiple sources, we need an annotation to tell us which file path annotations belong to (Note: the actual name of the alias can be arbitrary)
     # if an alias is not provided for a path, that values file will be ignored
