@@ -6,4 +6,5 @@ Examples of annotations used for different image replacement scenarios
 
  - [Helm Inline Values File]("./helm-inline-values-file/app.yaml) - A Helm source that has a single inline Values file specified.
  - [Helm Inline Values Files](./helm-inline-values-files/app.yaml) - A Helm source with multiple inline values files specified.
- - [Helm Mixed Source ValuesFiles](./helm-mixed-source-values-files/app.yaml) - A Helm sources with a mix of inline and ref based Values files. Also with an [Alternate approach](./helm-mixed-source-values-files/app-alternate.yaml)
+ - [Helm Mixed Source Values Files](./helm-mixed-source-values-files/app.yaml) - A Helm sources with a mix of inline and ref based Values files. Also with an [Alternate approach](./helm-mixed-source-values-files/app-alternate.yaml)
+ - [Single Ref Path Separated Values Files](./single-ref-path-separated-values/app.yaml) - A single ref is provided that contains multiple values files along different paths.
