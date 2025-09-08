@@ -1,0 +1,4 @@
+different:
+  structure:
+    here:
+      image: ubuntu:jammy

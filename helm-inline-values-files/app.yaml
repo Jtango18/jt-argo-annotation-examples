@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argo.octopus.com/project: "proj-1"
+    argo.octopus.environment: "development"
+
+    # When there are multiple sources, we need an annotation to tell us which file path annotations belong to (Note: the actual name of the alias can be arbitrary)
+    # if an alias is not provided for a path, that values file will be ignored
+    argo.octopus.com/image-replace-alias.core: "app-files/values.yaml"
+    argo.octopus.com/image-replace-alias.overlay: "app-files/values-overlay.yaml"
+    
+    argo.octopus.com/image-replace-paths.core: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ Values.another-image.name }}"
+    argo.octopus.com/image-replace-paths.overlay: "{{ .Values.different.structure.here.image }}"
+  name: helm-multi-inline-values
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    
+    repoURL: https://github.com/my-repo/my-argo-app
+    path: "./"
+    targetRevision: main
+    helm:
+      valueFiles:
+        - app-files/values.yaml
+        - app-files/values-overlay.yaml
+
+destination:
+  server: https://kubernetes.default.svc
+  namespace: helm-multi-inline-values
