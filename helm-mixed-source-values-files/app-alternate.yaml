@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argo.octopus.com/project: "proj-1"
+    argo.octopus.environment: "development"
+
+    # We can continue to honour the existing approach with ref values if required - but would need to let users understand the limitations
+    # In this approach, since a ref exists, we don't need to explicitly create an alias for it
+    # A preferred approach is presented in ./app.yaml which would ultimately also work.
+    argo.octopus.com/image-replace-alias.core: "app-files/values.yaml"
+    
+    argo.octopus.com/image-replace-paths.core: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ Values.another-image.name }}"
+    argo.octopus.com/image-replace-paths.remote: "{{ .Values.different.structure.here.image }}"
+  name: helm-mixed-source-values-alt
+  namespace: argocd
+spec:
+  project: default
+  sources:
+
+    - repoURL: https://github.com/another-repo/values-files-here
+      targetRevision: main
+      ref: remote-values
+    
+    - repoURL: https://github.com/my-repo/my-argo-app
+      path: "./"
+      targetRevision: main
+      helm:
+        valueFiles:
+          - app-files/values.yaml
+          - $remote-values/values.yaml
+
+destination:
+  server: https://kubernetes.default.svc
+  namespace: helm-mixed-source-values-alt

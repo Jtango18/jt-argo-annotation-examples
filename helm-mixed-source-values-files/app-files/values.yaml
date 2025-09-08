@@ -1,0 +1,5 @@
+image:
+  name: nginx
+  version: 1.18
+another-image:
+  name: alpine:latest
