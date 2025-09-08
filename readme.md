@@ -1,6 +1,14 @@
 # Examples of Annotations in Argo apps for Octopus Image Updating.
 
-Examples of annotations used for different image replacement scenarios
+Examples of annotations used for different image replacement scenarios.
+
+Ultimately we are suggesting leverage aliases to be able to specify the path to a particular file we are providing replacement paths for.
+
+This syntax is similar to how we currently apply image replacement path annotations for `Ref` sources
+
+### Outstanding Questions
+
+- How do we best handle the overlap of implicit ref vs explicit file aliases in annotations.
 
 ## Scenarios
 
