@@ -9,7 +9,7 @@ metadata:
     
     argo.octopus.com/image-replace-alias.remote: "$remote-values/values.yaml"
     argo.octopus.com/image-replace-paths.remote: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ .Values.another-image.name }}"
-  name: helm-mixed-source-values
+  name: helm-multiple-ref-alias
   namespace: argocd
 spec:
   project: default
@@ -28,7 +28,8 @@ spec:
       helm:
         valueFiles:
           - $remote-values/values.yaml
+          - $other-values/values.yaml
 
 destination:
   server: https://kubernetes.default.svc
-  namespace: helm-mixed-source-values
+  namespace: helm-multiple-ref-valis

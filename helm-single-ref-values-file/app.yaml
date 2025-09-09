@@ -6,7 +6,7 @@ metadata:
     argo.octopus.com/environment: "development"
     
     argo.octopus.com/image-replace-paths.remote-values: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ .Values.another-image.name }}"
-  name: helm-mixed-source-values
+  name: helm-single-ref-no-alias
   namespace: argocd
 spec:
   project: default
@@ -24,4 +24,4 @@ spec:
 
 destination:
   server: https://kubernetes.default.svc
-  namespace: helm-mixed-source-values
+  namespace: helm-single-ref-no-alias
