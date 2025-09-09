@@ -6,7 +6,7 @@ metadata:
     argo.octopus.environment: "development"
 
     # When there is a single source, with a single inline file, we use a single annotation to specify call paths
-    argo.octopus.com/image-replace-paths: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ Values.another-image.name }}"
+    argo.octopus.com/image-replace-paths: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ .Values.another-image.name }}"
 
   name: helm-inline-values
   namespace: argocd

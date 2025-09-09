@@ -10,7 +10,7 @@ metadata:
     argo.octopus.com/image-replace-alias.shared1: "$shared-values/some-path/values.yaml"
     argo.octopus.com/image-replace-alias.shared2: "$shared-values/another-path/values.yaml"
 
-    argo.octopus.com/image-replace-paths.shared1: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ Values.another-image.name }}"
+    argo.octopus.com/image-replace-paths.shared1: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ .Values.another-image.name }}"
     argo.octopus.com/image-replace-paths.shared2: "{{ .Values.different.structure.here.image }}"
 
   name: single-ref-path-separation

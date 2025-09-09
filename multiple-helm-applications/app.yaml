@@ -10,7 +10,7 @@ metadata:
     argo.octopus.com/image-replace-alias.app1: "https://github.com/my-repo/my-argo-app/main/values.yaml"
     argo.octopus.com/image-replace-alias.app2: "https://github.com/my-repo/my-other-argo-app/main/cool/values.yaml"
     
-    argo.octopus.com/image-replace-paths.app1: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ Values.another-image.name }}"
+    argo.octopus.com/image-replace-paths.app1: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ .Values.another-image.name }}"
     argo.octopus.com/image-replace-paths.app2: "{{ .Values.different.structure.here.image }}"
   name: helm-multi-inline-values
   namespace: argocd

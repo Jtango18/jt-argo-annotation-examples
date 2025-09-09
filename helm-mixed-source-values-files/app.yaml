@@ -10,7 +10,7 @@ metadata:
     argo.octopus.com/image-replace-alias.core: "app-files/values.yaml"
     argo.octopus.com/image-replace-alias.remote: "$remote-values/values.yaml"
     
-    argo.octopus.com/image-replace-paths.core: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ Values.another-image.name }}"
+    argo.octopus.com/image-replace-paths.core: "{{ .Values.image.name}}:{{ .Values.image.version}}, {{ .Values.another-image.name }}"
     argo.octopus.com/image-replace-paths.remote: "{{ .Values.different.structure.here.image }}"
   name: helm-mixed-source-values
   namespace: argocd
